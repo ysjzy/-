@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>温馨风个人主页</title>
+    <style>
+        /* 1. 定义暖色调变量 */
+        :root {
+            --primary-color: #FF8D6D; /* 暖橙色 */
+            --bg-color: #FFF9F5;      /* 奶油色背景 */
+            --card-bg: #FFFFFF;
+            --text-main: #5D4037;     /* 深咖色文字，比纯黑更温柔 */
+            --accent-color: #FFC8B4;  /* 浅粉橘 */
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        /* 导航栏 - 继承第一版结构，换成温馨色 */
+        nav {
+            background: white;
+            padding: 1rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(255, 141, 109, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { font-size: 1.4rem; font-weight: bold; color: var(--primary-color); }
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: var(--primary-color); }
+
+        /* 主容器 - 保持第一版的简洁 */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* 个人卡片 - 加入圆润感和悬浮动效 */
+        .profile-card {
+            background: var(--card-bg);
+            padding: 50px 40px;
+            border-radius: 30px; /* 超大圆角更温馨 */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-card:hover {
+            transform: translateY(-5px); /* 轻轻浮起 */
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border: 4px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 { color: var(--text-main); margin-bottom: 10px; }
+        .tagline { color: var(--primary-color); font-weight: bold; margin-bottom: 20px; }
+
+        /* 通用区块样式 */
+        section {
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            margin-bottom: 25px;
+        }
+
+        h2 { 
+            color: var(--text-main); 
+            display: flex; 
+            align-items: center;
+            font-size: 1.5rem;
+        }
+        h2::before { /* 装饰性小圆点 */
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+
+        /* 技能标签 - 换成温馨的马卡龙色 */
+        .skill-tag {
+            display: inline-block;
+            background: var(--bg-color);
+            color: var(--primary-color);
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid var(--accent-color);
+            transition: 0.3s;
+        }
+        .skill-tag:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* 底部按钮 */
+        .btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 35px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 141, 109, 0.3);
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 141, 109, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px;
+            color: #BC9B90;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">PORTFOLIO</div>
+        <div class="nav-links">
+            <a href="#about">关于</a>
+            <a href="#skills">技能</a>
+            <a href="#contact">联系</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="profile-card" id="about">
+            <div class="avatar">🌟</div>
+            <h1>T家唯一ACE</h1>
+            <p class="tagline">生活扇我巴掌，我：没上回爽</p>
+            <p>常驻美团，偶尔在京东，私下就是酒鬼来的</p>
+        </div>
+
+        <section id="skills">
+            <h2>我的能力栈</h2>
+            <div class="skill-tag">市场营销推广</div>
+            <div class="skill-tag">供应商考核体系</div>
+            <div class="skill-tag">数据审计</div>
+            <div class="skill-tag">品牌创意策划</div>
+            <div class="skill-tag">宠物心理学</div>
+        </section>
+
+        <section id="contact" style="text-align: center;">
+            <h2>联系我吧</h2>
+            <p>无论是给我钱还是把钱给我，我都非常欢迎！</p>
+            <p style="margin-bottom: 25px;">📧 Email: hello@yourdomain.com</p>
+            <button class="btn" onclick="alert('感谢点击！')">立即沟通</button>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2026 T家唯一ACE
+    </footer>
+
+</body>
+</html>
